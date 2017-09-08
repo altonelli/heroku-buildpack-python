@@ -38,7 +38,7 @@ if [ ! "$DISABLE_COLLECTSTATIC" ] && [ -f "$MANAGE_FILE" ] && [ "$DJANGO_INSTALL
     python "$BLANK_FILE"
     python "$MANAGE_FILE" collectstatic --noinput --traceback 2>&1 | sed '/^Post-processed/d;/^Copying/d;/^$/d' | indent
     COLLECTSTATIC_STATUS="${PIPESTATUS[0]}"
-
+    echo "Complete"
     set -e
 
     # Display a warning if collectstatic failed.
