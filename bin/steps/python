@@ -26,6 +26,7 @@ if [ ! "$SKIP_INSTALL" ]; then
 
     mcount "version.python.$PYTHON_VERSION"
 
+    echo "https://lang-python.s3.amazonaws.com/$STACK/runtimes/$PYTHON_VERSION.tar.gz"
     if ! curl "https://lang-python.s3.amazonaws.com/$STACK/runtimes/$PYTHON_VERSION.tar.gz" -s | tar zxv -C .heroku/python &> /dev/null; then
       puts-warn "Requested runtime ($PYTHON_VERSION) is not available for this stack ($STACK)."
       puts-warn "Aborting.  More info: https://devcenter.heroku.com/articles/python-support"
@@ -33,7 +34,6 @@ if [ ! "$SKIP_INSTALL" ]; then
     fi
 
   # Record for future reference.
-  echo $PYTHON_VERSION
   echo "$PYTHON_VERSION" > .heroku/python-version
   echo "$STACK" > .heroku/python-stack
   FRESH_PYTHON=true
