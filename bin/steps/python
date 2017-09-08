@@ -33,6 +33,7 @@ if [ ! "$SKIP_INSTALL" ]; then
     fi
 
   # Record for future reference.
+  echo $PYTHON_VERSION
   echo "$PYTHON_VERSION" > .heroku/python-version
   echo "$STACK" > .heroku/python-stack
   FRESH_PYTHON=true
