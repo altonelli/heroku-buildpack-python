@@ -1,2 +1,1 @@
-city_database
-stopwords
+wordnet
