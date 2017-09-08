@@ -24,8 +24,8 @@ testGEOS() {
 
 testNLTK() {
   compile "nltk"
-  assertCaptured "wordnet"
-  # assertCaptured "Downloading NLTK packages: city_database stopwords"
+  # assertCaptured "wordnet"
+  assertCaptured "Downloading NLTK packages: city_database stopwords"
   assertCapturedSuccess
 }
 
